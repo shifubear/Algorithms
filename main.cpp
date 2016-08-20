@@ -1,15 +1,17 @@
 #include <iostream>
-using namespace std;
+#include "Timer.h"
+#include "Chapter2.h"
 
 int main() {
-	int* array = new int[5];
-	for (int i = 0; i < 5; ++i) {
-		array[i] = 5 - i;
+	srand( time(NULL));
+	Timer timer;
+	timer.start();
+	
+	for (int i = 0; i < 1000; ++i) {
+		if (i % 5 == 0) {
+			std::cout << "Number: " << i << "\n";
+		}
 	}
 	
-	for (int i = 0; i < 5; ++i) {
-		cout << "Array[" << i << "] is " << array[i] << endl;
-	}
-	
-	delete [] array;
+	timer.stop();
 }
