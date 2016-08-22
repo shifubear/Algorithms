@@ -14,8 +14,7 @@ void RandInit(int_vec& v) {
 bool getInput(size_t& n) {
 	std::cout << "Please input the size of the vector > " << std::flush;
 	std::cin >> n;
-	return n > 0 ? true 
-		 	     : false;
+	return n > 0 ? true : false;
 }
 
 int main() {
