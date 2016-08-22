@@ -2,6 +2,7 @@
 #define TIMER_H_
 
 #include <ctime>
+#include <string>
 
 /**
  *  Wrapper class for timer functions to measure algorithm efficiency.
@@ -29,8 +30,11 @@ public:
 	 *  Stops the timer
 	 * 
 	 *  Stops the timer and prints the elapsed time onto console.
+	 *
+	 *  \param msg Add a printable message;
 	 */ 
 	void stop();
+	void stop(std::string msg);
 	
 private:
 	/**
