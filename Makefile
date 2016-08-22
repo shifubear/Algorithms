@@ -1,8 +1,13 @@
-Main: main.o Timer.o
-	g++ -o Main main.o Timer.o
+# -*- Makefile -*-
+
+Main: build/main.o build/Timer.o
+	g++ build/main.o build/Timer.o -o Main 
+	mv Main bin/
 	
-main.o: main.cpp
-	g++ -c main.cpp
+build/main.o: src/main.cpp src/Timer.h
+	g++ -c src/main.cpp
+	mv *.o build/
 	
-Timer.o: Timer.cpp Timer.h
-	g++ -c Timer.cpp
+build/Timer.o: src/Timer.cpp src/Timer.h
+	g++ -c src/Timer.cpp
+	mv *.o build/
